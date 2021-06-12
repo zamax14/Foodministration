@@ -12,11 +12,13 @@ SOURCES += \
     factura.cpp \
     main.cpp \
     mainwindow.cpp \
+    mesa.cpp \
     producto.cpp
 
 HEADERS += \
     factura.h \
     mainwindow.h \
+    mesa.h \
     producto.h
 
 FORMS += \
