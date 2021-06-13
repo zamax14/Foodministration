@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
-        <file>Base de Datos/beer_para_creer.db</file>
+        <file>Imagenes/fondo.jpg</file>
+        <file>Imagenes/mesa.png</file>
+        <file>Imagenes/icon.png</file>
     </qresource>
 </RCC>

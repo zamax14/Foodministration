@@ -1,15 +1,20 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++CONSTRUCTOR+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
-    //realizamos la conexion a la base de datos
+    //cargarmos el driver para trabajar con bases de datos sqlite
     baseDatos = QSqlDatabase::addDatabase("QSQLITE");
-    baseDatos.setDatabaseName("D:/Escritorio/Project Foodministration/Foodministration/Base de Datos/beer_para_creer.db");
+
+    //le damos la ubicacion del archivo al programa
+    QDir path;
+    baseDatos.setDatabaseName(QString::fromStdString(path.filePath("beer_para_creer.db").toStdString()));
+
     //validamos que la base se pueda abrir
     if(!baseDatos.open()){
         QMessageBox::critical(this, "Error", baseDatos.lastError().text());
@@ -21,6 +26,8 @@ MainWindow::MainWindow(QWidget *parent)
     cargarMenuProductos();
     cargarListaFacturas();
 }
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++FUNCIONES PUBLICAS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 MainWindow::~MainWindow()
 {
@@ -98,3 +105,67 @@ void MainWindow::cargarListaFacturas()
         listaFacturas.push_back(f);
     }
 }
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++FUNCIONES PROTEGIDAS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+void MainWindow::paintEvent(QPaintEvent *pe)
+{
+    QPixmap pixmap;
+    pixmap.load(":/Imagenes/fondo.jpg");
+    QPainter paint(this);
+    int widWidth = this->ui->centralwidget->width();
+    int widHeight = this->ui->centralwidget->height();
+    pixmap = pixmap.scaled(widWidth, widHeight, Qt::KeepAspectRatioByExpanding);
+    paint.drawPixmap(0, 0, pixmap);
+    QWidget::paintEvent(pe);
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++SLOTS PRIVADOS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+void MainWindow::on_mesa_1PB_clicked()
+{
+    ui->pagesSW->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_mesa_2PB_clicked()
+{
+    ui->pagesSW->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_mesa_3PB_clicked()
+{
+    ui->pagesSW->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_mesa_4PB_clicked()
+{
+    ui->pagesSW->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_mesa_5PB_clicked()
+{
+    ui->pagesSW->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_mesa_6PB_clicked()
+{
+    ui->pagesSW->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_mesa_7PB_clicked()
+{
+    ui->pagesSW->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_volverPB_clicked()
+{
+    ui->pagesSW->setCurrentIndex(0);
+}
+

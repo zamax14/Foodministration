@@ -9,6 +9,8 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 #include <iostream>
+#include <QDir>
+#include <QPainter>
 
 #include "producto.h"
 #include "factura.h"
@@ -32,6 +34,26 @@ public:
     void inicializarListaMesas();
     void cargarMenuProductos();
     void cargarListaFacturas();
+
+protected:
+    void paintEvent(QPaintEvent *pe);
+
+private slots:
+    void on_mesa_1PB_clicked();
+
+    void on_mesa_2PB_clicked();
+
+    void on_mesa_3PB_clicked();
+
+    void on_mesa_4PB_clicked();
+
+    void on_mesa_5PB_clicked();
+
+    void on_mesa_6PB_clicked();
+
+    void on_mesa_7PB_clicked();
+
+    void on_volverPB_clicked();
 
 private:
     Ui::MainWindow *ui;
