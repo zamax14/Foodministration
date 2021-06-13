@@ -31,6 +31,7 @@ public:
     ~MainWindow();
     void inicializarListaMesas();
     void cargarMenuProductos();
+    void cargarListaFacturas();
 
 private:
     Ui::MainWindow *ui;

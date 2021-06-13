@@ -19,15 +19,15 @@ public:
     const QString &getImagen() const;
     void setImagen(const QString &newImagen);
 
-    const QString &getCantidad() const;
-    void setCantidad(const QString &newCantidad);
+    int getCantidad() const;
+    void setCantidad(int newCantidad);
 
 private:
     int id;
     QString nombre;
     float precio;
     QString imagen;
-    QString cantidad;
+    int cantidad;
 
 };
 

@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     //inicializamos y cargamos los arreglos
     inicializarListaMesas();
     cargarMenuProductos();
+    cargarListaFacturas();
 }
 
 MainWindow::~MainWindow()
@@ -49,7 +50,51 @@ void MainWindow::cargarMenuProductos()
         p.setNombre(qry.value(1).toString());
         p.setPrecio(qry.value(2).toFloat());
         p.setImagen(qry.value(3).toString());
-        //hacemos push del objeto p a la lista
+        //hacemos push del objeto 'p' a la lista
         menuProductos.push_back(p);
+    }
+}
+
+void MainWindow::cargarListaFacturas()
+{
+    //se realiza la consulta sql para extraer todos los datos del ticket
+    QSqlQuery qry("SELECT * FROM ticket");
+
+    //ciclo que se repetira hasta que ya no haya una siguiente fila
+    while (qry.next()) {
+        //creamos objeto de tipo factura y le damos los valores correspondientes
+        Factura f;
+        f.setId(qry.value(0).toInt());
+        f.setNombre(qry.value(1).toString());
+        f.setTelefono(qry.value(2).toString());
+        f.setDireccion(qry.value(3).toString());
+        f.setFecha_hora(qry.value(4).toString());
+        f.setIva(qry.value(5).toFloat());
+        f.setSubtotal(qry.value(6).toFloat());
+        f.setTotal(qry.value(7).toFloat());
+
+        //se realiza la consulta sql para extraer los datos de los productos de la factura correspondiente
+        QSqlQuery qry2(QString("SELECT Producto_Id, Cantidad FROM ticket_producto WHERE Ticket_Id = %1").arg(f.getId()));
+
+        //ciclo que se repetira hasta que ya no haya una siguiente fila
+        while (qry2.next()) {
+            //creamos objeto de tipo producto y le damos los valores correspondientes
+            Producto p;
+            p.setId(qry2.value(0).toInt());
+            p.setCantidad(qry2.value(1).toInt());
+            //realizamos una busqueda en la lista del menu para conseguir los datos faltantes del producto
+            for (int i(0); i<menuProductos.size(); ++i) {
+                //si el id del producto que estamos buscando coincide con el de la lista, extraemos los datos y rompemos el ciclo
+                if(p.getId()==menuProductos.at(i).getId()){
+                    p.setNombre(menuProductos.at(i).getNombre());
+                    p.setPrecio(menuProductos.at(i).getPrecio());
+                    break;
+                }
+            }
+            //hacemos push del producto a la lista de pedidos de la factura
+            f.Pedidos.push_back(p);
+        }
+        //hacemos push del objeto 'f' a la lista
+        listaFacturas.push_back(f);
     }
 }

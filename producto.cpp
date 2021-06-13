@@ -45,12 +45,13 @@ void Producto::setImagen(const QString &newImagen)
     imagen = newImagen;
 }
 
-const QString &Producto::getCantidad() const
+int Producto::getCantidad() const
 {
     return cantidad;
 }
 
-void Producto::setCantidad(const QString &newCantidad)
+void Producto::setCantidad(int newCantidad)
 {
     cantidad = newCantidad;
 }
+
