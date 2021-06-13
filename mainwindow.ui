@@ -28,7 +28,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="Mesas">
        <widget class="QLabel" name="mesa_6LB">
@@ -499,6 +499,47 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
            </property>
            <property name="text">
             <string>                      MENU</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="MesaApagada">
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>150</y>
+          <width>471</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_8">
+         <item row="0" column="0" colspan="2">
+          <widget class="QLabel" name="mensajeMesaApagadaLB">
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+</string>
+           </property>
+           <property name="text">
+            <string>LA MESA SELECCIONADA SE ENCUENTRA DESHABILITADA. 
+-&gt; Presione en &quot;Activar&quot; para iniciar la mesa. 
+-&gt; Presione &quot;Regresar&quot; para volver al menu principal.</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="activarMesaPB">
+           <property name="text">
+            <string>Activar</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="regresarPB">
+           <property name="text">
+            <string>Regresar</string>
            </property>
           </widget>
          </item>

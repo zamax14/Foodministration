@@ -34,6 +34,7 @@ public:
     void inicializarListaMesas();
     void cargarMenuProductos();
     void cargarListaFacturas();
+    void imprimirMenu();
 
 protected:
     void paintEvent(QPaintEvent *pe);
@@ -55,11 +56,16 @@ private slots:
 
     void on_volverPB_clicked();
 
+    void on_activarMesaPB_clicked();
+
+    void on_regresarPB_clicked();
+
 private:
     Ui::MainWindow *ui;
     QList<Producto> menuProductos;
     QList<Factura> listaFacturas;
     QVarLengthArray<Mesa, 7> listaMesas;
     QSqlDatabase baseDatos;
+    int mesaActual = 0;
 };
 #endif // MAINWINDOW_H

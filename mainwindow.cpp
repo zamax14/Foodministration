@@ -109,6 +109,11 @@ void MainWindow::cargarListaFacturas()
     }
 }
 
+void MainWindow::imprimirMenu()
+{
+
+}
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++FUNCIONES PROTEGIDAS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 void MainWindow::paintEvent(QPaintEvent *pe)
@@ -127,48 +132,129 @@ void MainWindow::paintEvent(QPaintEvent *pe)
 
 void MainWindow::on_mesa_1PB_clicked()
 {
-    ui->pagesSW->setCurrentIndex(1);
+    //se coloca el index de la mesa segun la seleccionada
+    mesaActual = 0;
+
+    //se revisa en la lista de mesas si es que la mesa seleccionada esta habilitada
+    //en caso de que lo este, se cambia a la vista del menu, se coloca el numero de mesa en la etiqueta
+    if(listaMesas.at(mesaActual).getEstado()){
+        ui->pagesSW->setCurrentIndex(1);
+        ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        //se imprime el menu
+        imprimirMenu();
+    }
+    //de no ser el caso, se pasa a la vista de la mesa en estado apagado
+    else{
+        ui->pagesSW->setCurrentIndex(2);
+    }
 }
 
 
 void MainWindow::on_mesa_2PB_clicked()
 {
-    ui->pagesSW->setCurrentIndex(1);
+    mesaActual = 1;
+    if(listaMesas.at(mesaActual).getEstado()){
+        ui->pagesSW->setCurrentIndex(1);
+        ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        imprimirMenu();
+    }
+    else{
+        ui->pagesSW->setCurrentIndex(2);
+    }
 }
 
 
 void MainWindow::on_mesa_3PB_clicked()
 {
-    ui->pagesSW->setCurrentIndex(1);
+    mesaActual = 2;
+    if(listaMesas.at(mesaActual).getEstado()){
+        ui->pagesSW->setCurrentIndex(1);
+        ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        imprimirMenu();
+    }
+    else{
+        ui->pagesSW->setCurrentIndex(2);
+    }
 }
 
 
 void MainWindow::on_mesa_4PB_clicked()
 {
-    ui->pagesSW->setCurrentIndex(1);
+    mesaActual = 3;
+    if(listaMesas.at(mesaActual).getEstado()){
+        ui->pagesSW->setCurrentIndex(1);
+        ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        imprimirMenu();
+    }
+    else{
+        ui->pagesSW->setCurrentIndex(2);
+    }
 }
 
 
 void MainWindow::on_mesa_5PB_clicked()
 {
-    ui->pagesSW->setCurrentIndex(1);
+    mesaActual = 4;
+    if(listaMesas.at(mesaActual).getEstado()){
+        ui->pagesSW->setCurrentIndex(1);
+        ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        imprimirMenu();
+    }
+    else{
+        ui->pagesSW->setCurrentIndex(2);
+    }
 }
 
 
 void MainWindow::on_mesa_6PB_clicked()
 {
-    ui->pagesSW->setCurrentIndex(1);
+    mesaActual = 5;
+    if(listaMesas.at(mesaActual).getEstado()){
+        ui->pagesSW->setCurrentIndex(1);
+        ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        imprimirMenu();
+    }
+    else{
+        ui->pagesSW->setCurrentIndex(2);
+    }
 }
 
 
 void MainWindow::on_mesa_7PB_clicked()
 {
-    ui->pagesSW->setCurrentIndex(1);
+    mesaActual = 6;
+    if(listaMesas.at(mesaActual).getEstado()){
+        ui->pagesSW->setCurrentIndex(1);
+        ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        imprimirMenu();
+    }
+    else{
+        ui->pagesSW->setCurrentIndex(2);
+    }
 }
 
 
 void MainWindow::on_volverPB_clicked()
 {
+    //se regresa a la vista del menu principal
+    ui->pagesSW->setCurrentIndex(0);
+}
+
+void MainWindow::on_activarMesaPB_clicked()
+{
+    //cambia el estado de la mesa correspondiente a true
+    listaMesas[mesaActual].setEstado(true);
+    //cambia la vista de la interfaz al menu y coloca en la etiqueta el numero de mesa correspondiente
+    ui->pagesSW->setCurrentIndex(1);
+    ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+    //imprime el menu
+    imprimirMenu();
+}
+
+
+void MainWindow::on_regresarPB_clicked()
+{
+    //se regresa a la vista del menu principal
     ui->pagesSW->setCurrentIndex(0);
 }
 
