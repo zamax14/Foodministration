@@ -25,6 +25,9 @@ MainWindow::MainWindow(QWidget *parent)
     inicializarListaMesas();
     cargarMenuProductos();
     cargarListaFacturas();
+
+    //inicializamos la primera vista de la interfaz
+    ui->pagesSW->setCurrentIndex(0);
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++FUNCIONES PUBLICAS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/

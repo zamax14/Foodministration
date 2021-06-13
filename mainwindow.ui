@@ -19,7 +19,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
+    <item row="0" column="0">
      <widget class="QStackedWidget" name="pagesSW">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -337,7 +337,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
         <property name="geometry">
          <rect>
           <x>700</x>
-          <y>520</y>
+          <y>550</y>
           <width>71</width>
           <height>21</height>
          </rect>
@@ -356,9 +356,9 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>150</y>
+          <y>110</y>
           <width>761</width>
-          <height>361</height>
+          <height>431</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
@@ -379,9 +379,14 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
               <x>0</x>
               <y>0</y>
               <width>248</width>
-              <height>357</height>
+              <height>427</height>
              </rect>
             </property>
+            <layout class="QGridLayout" name="gridLayout_7">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout_6"/>
+             </item>
+            </layout>
            </widget>
           </widget>
          </item>
@@ -396,9 +401,14 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
               <x>0</x>
               <y>0</y>
               <width>501</width>
-              <height>357</height>
+              <height>427</height>
              </rect>
             </property>
+            <layout class="QGridLayout" name="gridLayout_5">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="menuGL"/>
+             </item>
+            </layout>
            </widget>
           </widget>
          </item>
@@ -408,9 +418,9 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>60</y>
+          <y>10</y>
           <width>761</width>
-          <height>54</height>
+          <height>31</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
@@ -464,9 +474,9 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>120</y>
+          <y>60</y>
           <width>761</width>
-          <height>26</height>
+          <height>41</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
@@ -477,7 +487,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
 </string>
            </property>
            <property name="text">
-            <string>                    PEDIDO</string>
+            <string>                 PEDIDO</string>
            </property>
           </widget>
          </item>

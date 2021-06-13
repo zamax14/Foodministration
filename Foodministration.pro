@@ -13,16 +13,19 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     mesa.cpp \
-    producto.cpp
+    producto.cpp \
+    productomenu.cpp
 
 HEADERS += \
     factura.h \
     mainwindow.h \
     mesa.h \
-    producto.h
+    producto.h \
+    productomenu.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    productomenu.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
