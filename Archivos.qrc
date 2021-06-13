@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Base de Datos/beer_para_creer.db</file>
+    </qresource>
+</RCC>
