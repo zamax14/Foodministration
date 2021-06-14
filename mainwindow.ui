@@ -28,7 +28,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Mesas">
        <widget class="QLabel" name="mesa_6LB">
@@ -316,6 +316,19 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
+       <widget class="QPushButton" name="historialFacturasPB">
+        <property name="geometry">
+         <rect>
+          <x>659</x>
+          <y>550</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Historial de Facturas</string>
+        </property>
+       </widget>
        <zorder>mesa_7LB</zorder>
        <zorder>mesa_3LB</zorder>
        <zorder>mesa_6LB</zorder>
@@ -331,6 +344,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <zorder>mesa_2PB</zorder>
        <zorder>mesa_1PB</zorder>
        <zorder>nombreLB</zorder>
+       <zorder>historialFacturasPB</zorder>
       </widget>
       <widget class="QWidget" name="Menu">
        <widget class="QPushButton" name="volverPB">
@@ -378,8 +392,8 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>98</width>
-              <height>28</height>
+              <width>248</width>
+              <height>427</height>
              </rect>
             </property>
             <layout class="QGridLayout" name="gridLayout_7">
@@ -400,8 +414,8 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>98</width>
-              <height>28</height>
+              <width>501</width>
+              <height>427</height>
              </rect>
             </property>
             <layout class="QGridLayout" name="gridLayout_5">
@@ -560,21 +574,10 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        </widget>
       </widget>
       <widget class="QWidget" name="Factura">
-       <widget class="QWidget" name="gridLayoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>30</y>
-          <width>651</width>
-          <height>511</height>
-         </rect>
-        </property>
-        <layout class="QGridLayout" name="facturaGL"/>
-       </widget>
        <widget class="QPushButton" name="okPB">
         <property name="geometry">
          <rect>
-          <x>360</x>
+          <x>350</x>
           <y>550</y>
           <width>80</width>
           <height>21</height>
@@ -583,6 +586,34 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
         <property name="text">
          <string>Ok</string>
         </property>
+       </widget>
+       <widget class="QScrollArea" name="facturasSA">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>30</y>
+          <width>701</width>
+          <height>501</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>699</width>
+           <height>499</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="0" column="0">
+           <layout class="QGridLayout" name="facturaGL"/>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </widget>
      </widget>

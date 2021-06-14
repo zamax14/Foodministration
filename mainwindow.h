@@ -38,10 +38,12 @@ public:
     void inicializarListaMesas();
     void cargarMenuProductos();
     void cargarListaFacturas();
+    void almacenarFacturaEnBD(const Factura f);
     void imprimirMenu();
     void imprimirPedidos();
     void validarGeneracionFactura();
     void imprimirFactura();
+    void imprimirHistorialDeFacturas();
 
 protected:
     void paintEvent(QPaintEvent *pe);
@@ -79,6 +81,8 @@ private slots:
 
     void on_okPB_clicked();
 
+    void on_historialFacturasPB_clicked();
+
 private:
     Ui::MainWindow *ui;
     QList<Producto> menuProductos;
@@ -86,5 +90,6 @@ private:
     QVarLengthArray<Mesa, 7> listaMesas;
     QSqlDatabase baseDatos;
     int mesaActual = 0;
+    int id_Ticket_Producto = 1;
 };
 #endif // MAINWINDOW_H

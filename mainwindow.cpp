@@ -98,9 +98,24 @@ void MainWindow::cargarListaFacturas()
 
             //hacemos push del producto a la lista de pedidos de la factura
             f.Pedidos.push_back(p);
+
+            //aumentamos la variable que guarda referencia del id de la tabla ticket_producto
+            ++id_Ticket_Producto;
         }
         //hacemos push del objeto 'f' a la lista
         listaFacturas.push_back(f);
+    }
+}
+
+void MainWindow::almacenarFacturaEnBD(const Factura f)
+{
+    QSqlQuery qry(QString("INSERT INTO ticket(Id, Nombre, Fecha_hora, Iva, Subtotal, Total) VALUES (%1, '%2', '%3', %4, %5, %6)")
+                  .arg(f.getId()).arg(f.getNombre()).arg(f.getFecha_hora()).arg(f.getIva()).arg(f.getSubtotal()).arg(f.getTotal()));
+
+    for (int i(0); i<f.Pedidos.size(); ++i) {
+        QSqlQuery qry2(QString("INSERT INTO ticket_producto (Id, Ticket_Id, Producto_Id, Cantidad) VALUES (%1, %2, %3, %4)")
+                       .arg(id_Ticket_Producto).arg(f.getId()).arg(f.Pedidos.at(i).getId()).arg(f.Pedidos.at(i).getCantidad()));
+        ++id_Ticket_Producto;
     }
 }
 
@@ -164,6 +179,7 @@ void MainWindow::validarGeneracionFactura()
     else{
         int total, iva, subtotal=0;
         Factura f;
+        f.setId(listaFacturas.size()+1);
         f.setNombre(listaMesas.at(mesaActual).getEncargado());
         f.setFecha_hora(QDateTime::currentDateTime().toString());
         f.Pedidos = listaMesas.at(mesaActual).getPedidosEntregados();
@@ -179,6 +195,7 @@ void MainWindow::validarGeneracionFactura()
         f.setTotal(total);
 
         listaFacturas.push_back(f);
+        almacenarFacturaEnBD(f);
 
         imprimirFactura();
 
@@ -202,6 +219,24 @@ void MainWindow::imprimirFactura()
     ui->facturaGL->addWidget(fi);
 
     ui->pagesSW->setCurrentIndex(3);
+}
+
+void MainWindow::imprimirHistorialDeFacturas()
+{
+    QLayoutItem* child;
+    while((child = ui->facturaGL->takeAt(0))!=0)
+    {
+        delete child->widget();
+    }
+
+    for (int i(0); i<listaFacturas.size(); ++i) {
+        facturaImpresa* fi = new facturaImpresa();
+        fi->insertarFactura(listaFacturas.at(i));
+        ui->facturaGL->addWidget(fi);
+    }
+
+    ui->pagesSW->setCurrentIndex(3);
+
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++FUNCIONES PROTEGIDAS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -345,6 +380,7 @@ void MainWindow::on_activarMesaPB_clicked()
     //cambia la vista de la interfaz al menu y coloca en la etiqueta el numero de mesa correspondiente
     ui->pagesSW->setCurrentIndex(1);
     ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+    ui->meserosCB->setCurrentText(listaMesas.at(mesaActual).getEncargado());
     //imprimimos los pedidos de la mesa
     imprimirPedidos();
 }
@@ -402,5 +438,11 @@ void MainWindow::on_facturaPB_clicked()
 void MainWindow::on_okPB_clicked()
 {
     ui->pagesSW->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_historialFacturasPB_clicked()
+{
+    imprimirHistorialDeFacturas();
 }
 
