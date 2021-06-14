@@ -17,7 +17,7 @@ void ProductoMenu::insertarProducto(const Producto &p)
 {
     QPixmap img(":/Imagenes/"+p.getImagen());
     ui->nombreLB->setText(p.getNombre());
-    ui->precioLB->setText("$"+QString::number(p.getPrecio()));
+    ui->precioLB->setText("$"+QString::number(p.getPrecio(),'g',2));
     ui->imagenLB->setPixmap(img);
     id = p.getId();
 }

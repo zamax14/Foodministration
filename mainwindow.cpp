@@ -144,6 +144,66 @@ void MainWindow::imprimirPedidos()
     }
 }
 
+void MainWindow::validarGeneracionFactura()
+{
+    if(listaMesas[mesaActual].existenEntregados()){
+        QMessageBox msg;
+        msg.setText("No hay pedidos entregados.");
+        msg.exec();
+    }
+    else if(!listaMesas[mesaActual].existenPendientes()){
+        QMessageBox msg;
+        msg.setText("Aun hay pedidos pendientes por entregar.");
+        msg.exec();
+    }
+    else if(listaMesas.at(mesaActual).getEncargado() == "Mesero"){
+        QMessageBox msg;
+        msg.setText("No se selecciono mesero.");
+        msg.exec();
+    }
+    else{
+        int total, iva, subtotal=0;
+        Factura f;
+        f.setNombre(listaMesas.at(mesaActual).getEncargado());
+        f.setFecha_hora(QDateTime::currentDateTime().toString());
+        f.Pedidos = listaMesas.at(mesaActual).getPedidosEntregados();
+
+        for (int i(0); i<f.Pedidos.size(); ++i)
+            subtotal += f.Pedidos.at(i).getCantidad() * f.Pedidos.at(i).getPrecio();
+
+        iva = subtotal * 0.16;
+        total = subtotal + iva;
+
+        f.setSubtotal(subtotal);
+        f.setIva(iva);
+        f.setTotal(total);
+
+        listaFacturas.push_back(f);
+
+        imprimirFactura();
+
+        Mesa m;
+        m.setEstado(false);
+        m.setEncargado("Mesero");
+        listaMesas.replace(mesaActual,m);
+    }
+}
+
+void MainWindow::imprimirFactura()
+{
+    QLayoutItem* child;
+    while((child = ui->facturaGL->takeAt(0))!=0)
+    {
+        delete child->widget();
+    }
+
+    facturaImpresa* fi = new facturaImpresa();
+    fi->insertarFactura(listaFacturas.back());
+    ui->facturaGL->addWidget(fi);
+
+    ui->pagesSW->setCurrentIndex(3);
+}
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++FUNCIONES PROTEGIDAS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 void MainWindow::paintEvent(QPaintEvent *pe)
@@ -277,6 +337,7 @@ void MainWindow::on_volverPB_clicked()
     ui->pagesSW->setCurrentIndex(0);
 }
 
+
 void MainWindow::on_activarMesaPB_clicked()
 {
     //cambia el estado de la mesa correspondiente a true
@@ -295,6 +356,7 @@ void MainWindow::on_regresarPB_clicked()
     ui->pagesSW->setCurrentIndex(0);
 }
 
+
 void MainWindow::on_agregarPedidoSignal(int id, int cantidad)
 {
     //se crea objeto producto y se colocan sus datos correspondientes
@@ -310,11 +372,13 @@ void MainWindow::on_agregarPedidoSignal(int id, int cantidad)
     imprimirPedidos();
 }
 
+
 void MainWindow::on_entregarPedidoSignal(Producto p)
 {
     listaMesas[mesaActual].moverProductoAEntregado(p);
     imprimirPedidos();
 }
+
 
 void MainWindow::on_eliminarPedidoSignal(Producto p)
 {
@@ -326,5 +390,17 @@ void MainWindow::on_eliminarPedidoSignal(Producto p)
 void MainWindow::on_meserosCB_currentTextChanged(const QString &arg1)
 {
     listaMesas[mesaActual].setEncargado(arg1);
+}
+
+
+void MainWindow::on_facturaPB_clicked()
+{
+    validarGeneracionFactura();
+}
+
+
+void MainWindow::on_okPB_clicked()
+{
+    ui->pagesSW->setCurrentIndex(0);
 }
 

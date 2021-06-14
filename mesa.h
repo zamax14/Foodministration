@@ -18,6 +18,8 @@ public:
     void ingresarProductoPendiente(const Producto p);
     void moverProductoAEntregado(const Producto p);
     void eliminarProductoPendiente(const Producto p);
+    bool existenEntregados();
+    bool existenPendientes();
 
     const QList<Producto> &getPedidosPendientes() const;
 

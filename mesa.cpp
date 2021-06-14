@@ -78,3 +78,13 @@ void Mesa::eliminarProductoPendiente(const Producto p)
             pedidosPendientes.removeAt(i);
     }
 }
+
+bool Mesa::existenEntregados()
+{
+    return pedidosEntregados.empty();
+}
+
+bool Mesa::existenPendientes()
+{
+    return pedidosPendientes.empty();
+}

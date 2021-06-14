@@ -11,12 +11,14 @@
 #include <iostream>
 #include <QDir>
 #include <QPainter>
+#include <QDateTime>
 
 #include "producto.h"
 #include "factura.h"
 #include "mesa.h"
 #include "productomenu.h"
 #include "pedidorealizado.h"
+#include "facturaimpresa.h"
 
 using namespace std;
 
@@ -38,6 +40,8 @@ public:
     void cargarListaFacturas();
     void imprimirMenu();
     void imprimirPedidos();
+    void validarGeneracionFactura();
+    void imprimirFactura();
 
 protected:
     void paintEvent(QPaintEvent *pe);
@@ -70,6 +74,10 @@ private slots:
     void on_eliminarPedidoSignal(Producto p);
 
     void on_meserosCB_currentTextChanged(const QString &arg1);
+
+    void on_facturaPB_clicked();
+
+    void on_okPB_clicked();
 
 private:
     Ui::MainWindow *ui;

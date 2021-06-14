@@ -17,7 +17,7 @@ void PedidoRealizado::insertarPedido(const Producto p, const bool estado)
 {
     ui->nombreLB->setText(p.getNombre());
     ui->cantidadLB->setText("Cantidad: " + QString::number(p.getCantidad()));
-    ui->precioLB->setText("Precio Unitario: $" + QString::number(p.getPrecio()));
+    ui->precioLB->setText("Precio Unitario: $" + QString::number(p.getPrecio(),'g',2));
 
     if(estado){
         ui->entregadoPB->setEnabled(false);

@@ -28,7 +28,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="Mesas">
        <widget class="QLabel" name="mesa_6LB">
@@ -378,8 +378,8 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>248</width>
-              <height>427</height>
+              <width>98</width>
+              <height>28</height>
              </rect>
             </property>
             <layout class="QGridLayout" name="gridLayout_7">
@@ -400,8 +400,8 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>501</width>
-              <height>427</height>
+              <width>98</width>
+              <height>28</height>
              </rect>
             </property>
             <layout class="QGridLayout" name="gridLayout_5">
@@ -504,6 +504,19 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
          </item>
         </layout>
        </widget>
+       <widget class="QPushButton" name="facturaPB">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>550</y>
+          <width>80</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Factura</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="MesaApagada">
        <widget class="QWidget" name="layoutWidget">
@@ -544,6 +557,32 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
           </widget>
          </item>
         </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Factura">
+       <widget class="QWidget" name="gridLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>30</y>
+          <width>651</width>
+          <height>511</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="facturaGL"/>
+       </widget>
+       <widget class="QPushButton" name="okPB">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>550</y>
+          <width>80</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ok</string>
+        </property>
        </widget>
       </widget>
      </widget>
