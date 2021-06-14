@@ -28,7 +28,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Mesas">
        <widget class="QLabel" name="mesa_6LB">
@@ -506,7 +506,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        </widget>
       </widget>
       <widget class="QWidget" name="MesaApagada">
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>170</x>

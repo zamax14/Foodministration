@@ -12,8 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     baseDatos = QSqlDatabase::addDatabase("QSQLITE");
 
     //le damos la ubicacion del archivo al programa
-    QDir path;
-    baseDatos.setDatabaseName(QString::fromStdString(path.filePath("beer_para_creer.db").toStdString()));
+    baseDatos.setDatabaseName("D:/Escritorio/Project Foodministration/Foodministration/beer_para_creer.db");
 
     //validamos que la base se pueda abrir
     if(!baseDatos.open()){
@@ -95,15 +94,9 @@ void MainWindow::cargarListaFacturas()
             Producto p;
             p.setId(qry2.value(0).toInt());
             p.setCantidad(qry2.value(1).toInt());
-            //realizamos una busqueda en la lista del menu para conseguir los datos faltantes del producto
-            for (int i(0); i<menuProductos.size(); ++i) {
-                //si el id del producto que estamos buscando coincide con el de la lista, extraemos los datos y rompemos el ciclo
-                if(p.getId()==menuProductos.at(i).getId()){
-                    p.setNombre(menuProductos.at(i).getNombre());
-                    p.setPrecio(menuProductos.at(i).getPrecio());
-                    break;
-                }
-            }
+            p.setNombre(menuProductos.at(p.getId()-1).getNombre());
+            p.setPrecio(menuProductos.at(p.getId()-1).getPrecio());
+
             //hacemos push del producto a la lista de pedidos de la factura
             f.Pedidos.push_back(p);
         }
@@ -118,6 +111,8 @@ void MainWindow::imprimirMenu()
     for (int i(0); i<menuProductos.size(); ++i) {
         //creamos un objeto de tipo ProductosMenu
         ProductoMenu* pm = new ProductoMenu;
+        pm->insertarProducto(menuProductos.at(i));
+        connect(pm, SIGNAL(sglAgregar(int, int)), this, SLOT(on_agregarPedidoSignal(int, int)));
         ui->menuGL->addWidget(pm, i/3, i%3, Qt::AlignCenter);
     }
 }
@@ -254,5 +249,24 @@ void MainWindow::on_regresarPB_clicked()
 {
     //se regresa a la vista del menu principal
     ui->pagesSW->setCurrentIndex(0);
+}
+
+void MainWindow::on_agregarPedidoSignal(int id, int cantidad)
+{
+    int i;
+    for (i = 0; i<listaMesas.at(mesaActual).pedidosPendientes.size(); ++i) {
+        if(id == listaMesas.at(mesaActual).pedidosPendientes.at(i).getId())
+            listaMesas[mesaActual].pedidosPendientes[i].setCantidad(listaMesas[mesaActual].pedidosPendientes[i].getCantidad() + cantidad);
+    }
+
+    if(i == listaMesas.at(mesaActual).pedidosPendientes.size()){
+        Producto p;
+        p.setId(id);
+        p.setCantidad(cantidad);
+        p.setNombre(menuProductos.at(id-1).getNombre());
+        p.setPrecio(menuProductos.at(id-1).getPrecio());
+
+        listaMesas[mesaActual].pedidosPendientes.push_back(p);
+    }
 }
 

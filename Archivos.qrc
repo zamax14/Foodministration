@@ -3,5 +3,37 @@
         <file>Imagenes/fondo.jpg</file>
         <file>Imagenes/mesa.png</file>
         <file>Imagenes/icon.png</file>
+        <file>Imagenes/alitas.png</file>
+        <file>Imagenes/aros_cebolla.png</file>
+        <file>Imagenes/boneless.png</file>
+        <file>Imagenes/cerveza.png</file>
+        <file>Imagenes/chilaquiles.png</file>
+        <file>Imagenes/coca-cola.png</file>
+        <file>Imagenes/dedos_queso.png</file>
+        <file>Imagenes/ensalada_pollo.png</file>
+        <file>Imagenes/Fanta.png</file>
+        <file>Imagenes/fondoProducto.png</file>
+        <file>Imagenes/hamburguesa_pollo.png</file>
+        <file>Imagenes/hamburguesa_res.png</file>
+        <file>Imagenes/helado_chocolate.png</file>
+        <file>Imagenes/helado_fresa.png</file>
+        <file>Imagenes/helado_pistache.png</file>
+        <file>Imagenes/helado_vainilla.png</file>
+        <file>Imagenes/hot-dog.png</file>
+        <file>Imagenes/manzanita_sol.png</file>
+        <file>Imagenes/nachos.png</file>
+        <file>Imagenes/papas_francesas.png</file>
+        <file>Imagenes/papas_gajo.png</file>
+        <file>Imagenes/pastel_chocolate.png</file>
+        <file>Imagenes/pastel_zanahoria.png</file>
+        <file>Imagenes/pastel3leches.png</file>
+        <file>Imagenes/pizza_carnes.png</file>
+        <file>Imagenes/pizza_hawaiana.png</file>
+        <file>Imagenes/pizza_pepperoni.png</file>
+        <file>Imagenes/salchitacos.png</file>
+        <file>Imagenes/spaghetti.png</file>
+        <file>Imagenes/squirt.png</file>
+        <file>Imagenes/tequila.png</file>
+        <file>Imagenes/fondoProdMenu.png</file>
     </qresource>
 </RCC>

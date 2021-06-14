@@ -61,6 +61,8 @@ private slots:
 
     void on_regresarPB_clicked();
 
+    void on_agregarPedidoSignal(int id, int cantidad);
+
 private:
     Ui::MainWindow *ui;
     QList<Producto> menuProductos;
