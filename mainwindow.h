@@ -16,6 +16,7 @@
 #include "factura.h"
 #include "mesa.h"
 #include "productomenu.h"
+#include "pedidorealizado.h"
 
 using namespace std;
 
@@ -36,6 +37,7 @@ public:
     void cargarMenuProductos();
     void cargarListaFacturas();
     void imprimirMenu();
+    void imprimirPedidos();
 
 protected:
     void paintEvent(QPaintEvent *pe);
@@ -62,6 +64,12 @@ private slots:
     void on_regresarPB_clicked();
 
     void on_agregarPedidoSignal(int id, int cantidad);
+
+    void on_entregarPedidoSignal(Producto p);
+
+    void on_eliminarPedidoSignal(Producto p);
+
+    void on_meserosCB_currentTextChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;

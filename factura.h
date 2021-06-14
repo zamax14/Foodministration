@@ -15,12 +15,6 @@ public:
     const QString &getNombre() const;
     void setNombre(const QString &newNombre);
 
-    const QString &getTelefono() const;
-    void setTelefono(const QString &newTelefono);
-
-    const QString &getDireccion() const;
-    void setDireccion(const QString &newDireccion);
-
     const QString &getFecha_hora() const;
     void setFecha_hora(const QString &newFecha_hora);
 
@@ -38,8 +32,6 @@ public:
 private:
     int id;
     QString nombre;
-    QString telefono;
-    QString direccion;
     QString fecha_hora;
     float iva;
     float subtotal;

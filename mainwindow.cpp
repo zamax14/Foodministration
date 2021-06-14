@@ -45,6 +45,7 @@ void MainWindow::inicializarListaMesas()
     for (int i(0); i<7; ++i) {
         Mesa m;
         m.setEstado(false);
+        m.setEncargado("Mesero");
         listaMesas.push_back(m);
     }
 }
@@ -78,12 +79,10 @@ void MainWindow::cargarListaFacturas()
         Factura f;
         f.setId(qry.value(0).toInt());
         f.setNombre(qry.value(1).toString());
-        f.setTelefono(qry.value(2).toString());
-        f.setDireccion(qry.value(3).toString());
-        f.setFecha_hora(qry.value(4).toString());
-        f.setIva(qry.value(5).toFloat());
-        f.setSubtotal(qry.value(6).toFloat());
-        f.setTotal(qry.value(7).toFloat());
+        f.setFecha_hora(qry.value(2).toString());
+        f.setIva(qry.value(3).toFloat());
+        f.setSubtotal(qry.value(4).toFloat());
+        f.setTotal(qry.value(5).toFloat());
 
         //se realiza la consulta sql para extraer los datos de los productos de la factura correspondiente
         QSqlQuery qry2(QString("SELECT Producto_Id, Cantidad FROM ticket_producto WHERE Ticket_Id = %1").arg(f.getId()));
@@ -117,6 +116,34 @@ void MainWindow::imprimirMenu()
     }
 }
 
+void MainWindow::imprimirPedidos()
+{
+    QLayoutItem* child;
+    while((child = ui->pedidosGL->takeAt(0))!=0)
+    {
+        delete child->widget();
+    }
+
+    int contF = 0;
+    QList<Producto> pedidos = listaMesas.at(mesaActual).getPedidosPendientes();
+    for (int i(0); i<pedidos.size(); ++i) {
+        PedidoRealizado* pr = new PedidoRealizado();
+        pr->insertarPedido(pedidos.at(i), false);
+        connect(pr, SIGNAL(sglEntregar(Producto)), this, SLOT(on_entregarPedidoSignal(Producto)));
+        connect(pr, SIGNAL(sglEliminar(Producto)), this, SLOT(on_eliminarPedidoSignal(Producto)));
+        ui->pedidosGL->addWidget(pr,contF,1);
+        ++contF;
+    }
+
+    pedidos = listaMesas.at(mesaActual).getPedidosEntregados();
+    for (int i(0); i<pedidos.size(); ++i) {
+        PedidoRealizado* pr = new PedidoRealizado();
+        pr->insertarPedido(pedidos.at(i), true);
+        ui->pedidosGL->addWidget(pr,contF,1);
+        ++contF;
+    }
+}
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++FUNCIONES PROTEGIDAS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 void MainWindow::paintEvent(QPaintEvent *pe)
@@ -139,10 +166,13 @@ void MainWindow::on_mesa_1PB_clicked()
     mesaActual = 0;
 
     //se revisa en la lista de mesas si es que la mesa seleccionada esta habilitada
-    //en caso de que lo este, se cambia a la vista del menu, se coloca el numero de mesa en la etiqueta
+    //en caso de que lo este, se cambia a la vista del menu, se coloca el numero de mesa en la etiqueta y el mesero correspondiente
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        ui->meserosCB->setCurrentText(listaMesas.at(mesaActual).getEncargado());
+        //imprimimos los pedidos de la mesa
+        imprimirPedidos();
     }
     //de no ser el caso, se pasa a la vista de la mesa en estado apagado
     else{
@@ -157,6 +187,8 @@ void MainWindow::on_mesa_2PB_clicked()
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        ui->meserosCB->setCurrentText(listaMesas.at(mesaActual).getEncargado());
+        imprimirPedidos();
     }
     else{
         ui->pagesSW->setCurrentIndex(2);
@@ -170,6 +202,8 @@ void MainWindow::on_mesa_3PB_clicked()
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        ui->meserosCB->setCurrentText(listaMesas.at(mesaActual).getEncargado());
+        imprimirPedidos();
     }
     else{
         ui->pagesSW->setCurrentIndex(2);
@@ -183,6 +217,8 @@ void MainWindow::on_mesa_4PB_clicked()
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        ui->meserosCB->setCurrentText(listaMesas.at(mesaActual).getEncargado());
+        imprimirPedidos();
     }
     else{
         ui->pagesSW->setCurrentIndex(2);
@@ -196,6 +232,8 @@ void MainWindow::on_mesa_5PB_clicked()
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        ui->meserosCB->setCurrentText(listaMesas.at(mesaActual).getEncargado());
+        imprimirPedidos();
     }
     else{
         ui->pagesSW->setCurrentIndex(2);
@@ -209,6 +247,8 @@ void MainWindow::on_mesa_6PB_clicked()
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        ui->meserosCB->setCurrentText(listaMesas.at(mesaActual).getEncargado());
+        imprimirPedidos();
     }
     else{
         ui->pagesSW->setCurrentIndex(2);
@@ -222,6 +262,8 @@ void MainWindow::on_mesa_7PB_clicked()
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+        ui->meserosCB->setCurrentText(listaMesas.at(mesaActual).getEncargado());
+        imprimirPedidos();
     }
     else{
         ui->pagesSW->setCurrentIndex(2);
@@ -242,6 +284,8 @@ void MainWindow::on_activarMesaPB_clicked()
     //cambia la vista de la interfaz al menu y coloca en la etiqueta el numero de mesa correspondiente
     ui->pagesSW->setCurrentIndex(1);
     ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
+    //imprimimos los pedidos de la mesa
+    imprimirPedidos();
 }
 
 
@@ -253,20 +297,34 @@ void MainWindow::on_regresarPB_clicked()
 
 void MainWindow::on_agregarPedidoSignal(int id, int cantidad)
 {
-    int i;
-    for (i = 0; i<listaMesas.at(mesaActual).pedidosPendientes.size(); ++i) {
-        if(id == listaMesas.at(mesaActual).pedidosPendientes.at(i).getId())
-            listaMesas[mesaActual].pedidosPendientes[i].setCantidad(listaMesas[mesaActual].pedidosPendientes[i].getCantidad() + cantidad);
-    }
+    //se crea objeto producto y se colocan sus datos correspondientes
+    Producto p;
+    p.setId(id);
+    p.setCantidad(cantidad);
+    p.setNombre(menuProductos.at(id-1).getNombre());
+    p.setPrecio(menuProductos.at(id-1).getPrecio());
+    //se llama a la funcion de la mesa que añade producto a pendiente
+    listaMesas[mesaActual].ingresarProductoPendiente(p);
 
-    if(i == listaMesas.at(mesaActual).pedidosPendientes.size()){
-        Producto p;
-        p.setId(id);
-        p.setCantidad(cantidad);
-        p.setNombre(menuProductos.at(id-1).getNombre());
-        p.setPrecio(menuProductos.at(id-1).getPrecio());
+    //imprimimos los pedidos
+    imprimirPedidos();
+}
 
-        listaMesas[mesaActual].pedidosPendientes.push_back(p);
-    }
+void MainWindow::on_entregarPedidoSignal(Producto p)
+{
+    listaMesas[mesaActual].moverProductoAEntregado(p);
+    imprimirPedidos();
+}
+
+void MainWindow::on_eliminarPedidoSignal(Producto p)
+{
+    listaMesas[mesaActual].eliminarProductoPendiente(p);
+    imprimirPedidos();
+}
+
+
+void MainWindow::on_meserosCB_currentTextChanged(const QString &arg1)
+{
+    listaMesas[mesaActual].setEncargado(arg1);
 }
 

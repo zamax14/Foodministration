@@ -25,26 +25,6 @@ void Factura::setNombre(const QString &newNombre)
     nombre = newNombre;
 }
 
-const QString &Factura::getTelefono() const
-{
-    return telefono;
-}
-
-void Factura::setTelefono(const QString &newTelefono)
-{
-    telefono = newTelefono;
-}
-
-const QString &Factura::getDireccion() const
-{
-    return direccion;
-}
-
-void Factura::setDireccion(const QString &newDireccion)
-{
-    direccion = newDireccion;
-}
-
 const QString &Factura::getFecha_hora() const
 {
     return fecha_hora;

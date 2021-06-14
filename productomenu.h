@@ -27,6 +27,7 @@ private:
 
 signals:
     void sglAgregar(const int id, const int cantidad);
+
 private slots:
     void on_cantidadSB_valueChanged(int arg1);
     void on_agregarPB_clicked();

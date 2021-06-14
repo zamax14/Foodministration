@@ -14,8 +14,8 @@
    <string>Foodministration</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>Imagenes/icon.png</normaloff>Imagenes/icon.png</iconset>
+   <iconset resource="Archivos.qrc">
+    <normaloff>:/Imagenes/icon.png</normaloff>:/Imagenes/icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -28,7 +28,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Mesas">
        <widget class="QLabel" name="mesa_6LB">
@@ -384,7 +384,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_7">
              <item row="0" column="0">
-              <layout class="QGridLayout" name="gridLayout_6"/>
+              <layout class="QGridLayout" name="pedidosGL"/>
              </item>
             </layout>
            </widget>

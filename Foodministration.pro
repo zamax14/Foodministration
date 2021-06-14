@@ -10,21 +10,27 @@ CONFIG += c++11
 
 SOURCES += \
     factura.cpp \
+    facturaimpresa.cpp \
     main.cpp \
     mainwindow.cpp \
     mesa.cpp \
+    pedidorealizado.cpp \
     producto.cpp \
     productomenu.cpp
 
 HEADERS += \
     factura.h \
+    facturaimpresa.h \
     mainwindow.h \
     mesa.h \
+    pedidorealizado.h \
     producto.h \
     productomenu.h
 
 FORMS += \
+    facturaimpresa.ui \
     mainwindow.ui \
+    pedidorealizado.ui \
     productomenu.ui
 
 # Default rules for deployment.

@@ -15,12 +15,20 @@ public:
     bool getEstado() const;
     void setEstado(bool newEstado);
 
-    QList<Producto> pedidosPendientes;
-    QList<Producto> pedidosEntregados;
+    void ingresarProductoPendiente(const Producto p);
+    void moverProductoAEntregado(const Producto p);
+    void eliminarProductoPendiente(const Producto p);
+
+    const QList<Producto> &getPedidosPendientes() const;
+
+    const QList<Producto> &getPedidosEntregados() const;
 
 private:
     QString encargado;
     bool estado;
+
+    QList<Producto> pedidosPendientes;
+    QList<Producto> pedidosEntregados;
 };
 
 #endif // MESA_H
