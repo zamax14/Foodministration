@@ -26,6 +26,9 @@ MainWindow::MainWindow(QWidget *parent)
     cargarMenuProductos();
     cargarListaFacturas();
 
+    //imprimimos el menu
+    imprimirMenu();
+
     //inicializamos la primera vista de la interfaz
     ui->pagesSW->setCurrentIndex(0);
 }
@@ -111,7 +114,12 @@ void MainWindow::cargarListaFacturas()
 
 void MainWindow::imprimirMenu()
 {
-
+    //recorremos toda la lista del menu productos
+    for (int i(0); i<menuProductos.size(); ++i) {
+        //creamos un objeto de tipo ProductosMenu
+        ProductoMenu* pm = new ProductoMenu;
+        ui->menuGL->addWidget(pm, i/3, i%3, Qt::AlignCenter);
+    }
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++FUNCIONES PROTEGIDAS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -140,8 +148,6 @@ void MainWindow::on_mesa_1PB_clicked()
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
-        //se imprime el menu
-        imprimirMenu();
     }
     //de no ser el caso, se pasa a la vista de la mesa en estado apagado
     else{
@@ -156,7 +162,6 @@ void MainWindow::on_mesa_2PB_clicked()
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
-        imprimirMenu();
     }
     else{
         ui->pagesSW->setCurrentIndex(2);
@@ -170,7 +175,6 @@ void MainWindow::on_mesa_3PB_clicked()
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
-        imprimirMenu();
     }
     else{
         ui->pagesSW->setCurrentIndex(2);
@@ -184,7 +188,6 @@ void MainWindow::on_mesa_4PB_clicked()
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
-        imprimirMenu();
     }
     else{
         ui->pagesSW->setCurrentIndex(2);
@@ -198,7 +201,6 @@ void MainWindow::on_mesa_5PB_clicked()
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
-        imprimirMenu();
     }
     else{
         ui->pagesSW->setCurrentIndex(2);
@@ -212,7 +214,6 @@ void MainWindow::on_mesa_6PB_clicked()
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
-        imprimirMenu();
     }
     else{
         ui->pagesSW->setCurrentIndex(2);
@@ -226,7 +227,6 @@ void MainWindow::on_mesa_7PB_clicked()
     if(listaMesas.at(mesaActual).getEstado()){
         ui->pagesSW->setCurrentIndex(1);
         ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
-        imprimirMenu();
     }
     else{
         ui->pagesSW->setCurrentIndex(2);
@@ -247,8 +247,6 @@ void MainWindow::on_activarMesaPB_clicked()
     //cambia la vista de la interfaz al menu y coloca en la etiqueta el numero de mesa correspondiente
     ui->pagesSW->setCurrentIndex(1);
     ui->mesaLB->setText("MESA: "+QString::number(mesaActual+1));
-    //imprime el menu
-    imprimirMenu();
 }
 
 

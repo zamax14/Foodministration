@@ -15,6 +15,7 @@
 #include "producto.h"
 #include "factura.h"
 #include "mesa.h"
+#include "productomenu.h"
 
 using namespace std;
 
