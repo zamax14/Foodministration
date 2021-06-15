@@ -6,24 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>478</width>
-    <height>500</height>
+    <width>483</width>
+    <height>571</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>0</width>
-    <height>500</height>
+    <height>571</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>16777215</width>
-    <height>500</height>
+    <height>571</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>0</width>
+    <height>571</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <widget class="QLabel" name="idLB">
    <property name="geometry">
@@ -34,6 +43,10 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Agency FB&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
    <property name="text">
     <string>ID</string>
    </property>
@@ -41,11 +54,15 @@
   <widget class="QLabel" name="nombreLB">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>70</y>
+     <x>20</x>
+     <y>180</y>
      <width>301</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Agency FB&quot;;
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Nombre</string>
@@ -60,6 +77,10 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Agency FB&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
    <property name="text">
     <string>Fecha-Hora</string>
    </property>
@@ -68,10 +89,14 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>390</y>
+     <y>430</y>
      <width>241</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Agency FB&quot;;
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Iva</string>
@@ -81,10 +106,14 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>360</y>
+     <y>410</y>
      <width>241</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Agency FB&quot;;
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Subtotal</string>
@@ -94,10 +123,14 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>420</y>
+     <y>460</y>
      <width>271</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Agency FB&quot;;
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Total</string>
@@ -106,11 +139,15 @@
   <widget class="QLabel" name="pedidosLB">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>100</y>
+     <x>20</x>
+     <y>200</y>
      <width>341</width>
-     <height>231</height>
+     <height>211</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Agency FB&quot;;
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>PEDIDOS: 
@@ -126,17 +163,151 @@
   <widget class="QLabel" name="fondoLB">
    <property name="geometry">
     <rect>
-     <x>-104</x>
-     <y>-58</y>
-     <width>711</width>
-     <height>621</height>
+     <x>10</x>
+     <y>9</y>
+     <width>461</width>
+     <height>551</height>
     </rect>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>551</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>478</width>
+     <height>551</height>
+    </size>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(139, 139, 139);</string>
+    <string notr="true">border-width: 2px;
+background-color: rgb(255, 255, 255);
+border-color: rgb(0, 0, 0);
+ border-style: solid;
+</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="logoLB">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>30</y>
+     <width>91</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="Archivos.qrc">:/Imagenes/logo.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>110</y>
+     <width>171</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 8pt &quot;Agency FB&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>ENRIQUE DIAZ DE LEÓN 261 GUADALAJARA, JALISCO</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>130</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 8pt &quot;Agency FB&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>COL. VILLASEÑOR C.P. 44600 RFC FGU830930PD3</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>150</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 10pt &quot;Agency FB&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>SUC AMERICAS</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="codigDeBarrasLB">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>480</y>
+     <width>411</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="Archivos.qrc">:/Imagenes/codigoDeBarras.PNG</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>520</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Agency FB&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>¡GRACIAS POR TU VISITA!</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <zorder>fondoLB</zorder>
@@ -147,7 +318,15 @@
   <zorder>subtotalLB</zorder>
   <zorder>totalLB</zorder>
   <zorder>pedidosLB</zorder>
+  <zorder>logoLB</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>codigDeBarrasLB</zorder>
+  <zorder>label_4</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="Archivos.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -127,7 +127,7 @@ void MainWindow::imprimirMenu()
         ProductoMenu* pm = new ProductoMenu;
         pm->insertarProducto(menuProductos.at(i));
         connect(pm, SIGNAL(sglAgregar(int, int)), this, SLOT(on_agregarPedidoSignal(int, int)));
-        ui->menuGL->addWidget(pm, i/3, i%3, Qt::AlignCenter);
+        ui->menuGL->addWidget(pm, i/5, i%5, Qt::AlignCenter);
     }
 }
 
@@ -147,6 +147,7 @@ void MainWindow::imprimirPedidos()
         connect(pr, SIGNAL(sglEntregar(Producto)), this, SLOT(on_entregarPedidoSignal(Producto)));
         connect(pr, SIGNAL(sglEliminar(Producto)), this, SLOT(on_eliminarPedidoSignal(Producto)));
         ui->pedidosGL->addWidget(pr,contF,1);
+
         ++contF;
     }
 
@@ -161,12 +162,12 @@ void MainWindow::imprimirPedidos()
 
 void MainWindow::validarGeneracionFactura()
 {
-    if(listaMesas[mesaActual].existenEntregados()){
+    if(listaMesas[mesaActual].listaEntregadosVacia()){
         QMessageBox msg;
         msg.setText("No hay pedidos entregados.");
         msg.exec();
     }
-    else if(!listaMesas[mesaActual].existenPendientes()){
+    else if(!listaMesas[mesaActual].listaPendientesVacia()){
         QMessageBox msg;
         msg.setText("Aun hay pedidos pendientes por entregar.");
         msg.exec();
@@ -177,7 +178,7 @@ void MainWindow::validarGeneracionFactura()
         msg.exec();
     }
     else{
-        int total, iva, subtotal=0;
+        float total, iva, subtotal=0;
         Factura f;
         f.setId(listaFacturas.size()+1);
         f.setNombre(listaMesas.at(mesaActual).getEncargado());
@@ -239,10 +240,73 @@ void MainWindow::imprimirHistorialDeFacturas()
 
 }
 
+void MainWindow::actualizarSemaforos(const int pos)
+{
+    switch (pos) {
+
+    case 0:
+        if(listaMesas.at(pos).getEstado() == false)
+            ui->semaforoM1->setPixmap(QPixmap(":/Imagenes/apagada.png"));
+        else if(!listaMesas[pos].listaPendientesVacia())
+            ui->semaforoM1->setPixmap(QPixmap(":/Imagenes/exclamacion.png"));
+        else
+            ui->semaforoM1->setPixmap(QPixmap(":/Imagenes/activa.png"));
+        break;
+    case 1:
+        if(listaMesas.at(pos).getEstado() == false)
+            ui->semaforoM2->setPixmap(QPixmap(":/Imagenes/apagada.png"));
+        else if(!listaMesas[pos].listaPendientesVacia())
+            ui->semaforoM2->setPixmap(QPixmap(":/Imagenes/exclamacion.png"));
+        else
+            ui->semaforoM2->setPixmap(QPixmap(":/Imagenes/activa.png"));
+        break;
+    case 2:
+        if(listaMesas.at(pos).getEstado() == false)
+            ui->semaforoM3->setPixmap(QPixmap(":/Imagenes/apagada.png"));
+        else if(!listaMesas[pos].listaPendientesVacia())
+            ui->semaforoM3->setPixmap(QPixmap(":/Imagenes/exclamacion.png"));
+        else
+            ui->semaforoM3->setPixmap(QPixmap(":/Imagenes/activa.png"));
+        break;
+    case 3:
+        if(listaMesas.at(pos).getEstado() == false)
+            ui->semaforoM4->setPixmap(QPixmap(":/Imagenes/apagada.png"));
+        else if(!listaMesas[pos].listaPendientesVacia())
+            ui->semaforoM4->setPixmap(QPixmap(":/Imagenes/exclamacion.png"));
+        else
+            ui->semaforoM4->setPixmap(QPixmap(":/Imagenes/activa.png"));
+        break;
+    case 4:
+        if(listaMesas.at(pos).getEstado() == false)
+            ui->semaforoM5->setPixmap(QPixmap(":/Imagenes/apagada.png"));
+        else if(!listaMesas[pos].listaPendientesVacia())
+            ui->semaforoM5->setPixmap(QPixmap(":/Imagenes/exclamacion.png"));
+        else
+            ui->semaforoM5->setPixmap(QPixmap(":/Imagenes/activa.png"));
+        break;
+    case 5:
+        if(listaMesas.at(pos).getEstado() == false)
+            ui->semaforoM6->setPixmap(QPixmap(":/Imagenes/apagada.png"));
+        else if(!listaMesas[pos].listaPendientesVacia())
+            ui->semaforoM6->setPixmap(QPixmap(":/Imagenes/exclamacion.png"));
+        else
+            ui->semaforoM6->setPixmap(QPixmap(":/Imagenes/activa.png"));
+        break;
+    case 6:
+        if(listaMesas.at(pos).getEstado() == false)
+            ui->semaforoM7->setPixmap(QPixmap(":/Imagenes/apagada.png"));
+        else if(!listaMesas[pos].listaPendientesVacia())
+            ui->semaforoM7->setPixmap(QPixmap(":/Imagenes/exclamacion.png"));
+        else
+            ui->semaforoM7->setPixmap(QPixmap(":/Imagenes/activa.png"));
+        break;
+    }
+}
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++FUNCIONES PROTEGIDAS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 void MainWindow::paintEvent(QPaintEvent *pe)
-{
+{  
     QPixmap pixmap;
     pixmap.load(":/Imagenes/fondo.jpg");
     QPainter paint(this);
@@ -446,3 +510,19 @@ void MainWindow::on_historialFacturasPB_clicked()
     imprimirHistorialDeFacturas();
 }
 
+
+void MainWindow::on_apagarPB_clicked()
+{
+    Mesa m;
+    m.setEstado(false);
+    m.setEncargado("Mesero");
+    listaMesas.replace(mesaActual,m);
+    ui->pagesSW->setCurrentIndex(0);
+}
+
+void MainWindow::on_pagesSW_currentChanged(int arg1)
+{
+    if(arg1 == 0)
+        //llamamos a la funcion que actualiza el estado grafico de la mesa
+        actualizarSemaforos(mesaActual);
+}

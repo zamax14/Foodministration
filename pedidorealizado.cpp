@@ -6,6 +6,7 @@ PedidoRealizado::PedidoRealizado(QWidget *parent) :
     ui(new Ui::PedidoRealizado)
 {
     ui->setupUi(this);
+
 }
 
 PedidoRealizado::~PedidoRealizado()
@@ -29,6 +30,7 @@ void PedidoRealizado::insertarPedido(const Producto p, const bool estado)
 
 void PedidoRealizado::on_entregadoPB_clicked()
 {
+    ui->fondoLB->setStyleSheet("QLabel { background-color : red; color : blue; }");
     emit sglEntregar(prod);
 }
 

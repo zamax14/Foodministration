@@ -44,6 +44,7 @@ public:
     void validarGeneracionFactura();
     void imprimirFactura();
     void imprimirHistorialDeFacturas();
+    void actualizarSemaforos(const int pos);
 
 protected:
     void paintEvent(QPaintEvent *pe);
@@ -82,6 +83,10 @@ private slots:
     void on_okPB_clicked();
 
     void on_historialFacturasPB_clicked();
+
+    void on_apagarPB_clicked();
+
+    void on_pagesSW_currentChanged(int arg1);
 
 private:
     Ui::MainWindow *ui;

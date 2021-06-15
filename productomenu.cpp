@@ -5,7 +5,7 @@ ProductoMenu::ProductoMenu(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ProductoMenu)
 {
-    ui->setupUi(this);
+    ui->setupUi(this);      
 }
 
 ProductoMenu::~ProductoMenu()

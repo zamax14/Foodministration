@@ -35,5 +35,15 @@
         <file>Imagenes/squirt.png</file>
         <file>Imagenes/tequila.png</file>
         <file>Imagenes/fondoProdMenu.png</file>
+        <file>Imagenes/logo.png</file>
+        <file>Imagenes/fondoPedido.PNG</file>
+        <file>Imagenes/codigoDeBarras.PNG</file>
+        <file>Imagenes/activa.png</file>
+        <file>Imagenes/apagada.png</file>
+        <file>Imagenes/exclamacion.png</file>
+        <file>Imagenes/fondoRestaurante.png</file>
+        <file>Imagenes/caja.PNG</file>
+        <file>Imagenes/entrada.PNG</file>
+        <file>Imagenes/recepcion.PNG</file>
     </qresource>
 </RCC>

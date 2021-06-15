@@ -79,12 +79,12 @@ void Mesa::eliminarProductoPendiente(const Producto p)
     }
 }
 
-bool Mesa::existenEntregados()
+bool Mesa::listaEntregadosVacia()
 {
     return pedidosEntregados.empty();
 }
 
-bool Mesa::existenPendientes()
+bool Mesa::listaPendientesVacia()
 {
     return pedidosPendientes.empty();
 }

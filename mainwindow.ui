@@ -6,9 +6,58 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1200</width>
     <height>600</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1200</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1200</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="Highlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Highlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Highlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>120</green>
+        <blue>215</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
   </property>
   <property name="windowTitle">
    <string>Foodministration</string>
@@ -17,8 +66,26 @@
    <iconset resource="Archivos.qrc">
     <normaloff>:/Imagenes/icon.png</normaloff>:/Imagenes/icon.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item row="0" column="0">
      <widget class="QStackedWidget" name="pagesSW">
       <property name="sizePolicy">
@@ -34,7 +101,7 @@
        <widget class="QLabel" name="mesa_6LB">
         <property name="geometry">
          <rect>
-          <x>540</x>
+          <x>970</x>
           <y>300</y>
           <width>121</width>
           <height>111</height>
@@ -53,8 +120,8 @@
        <widget class="QPushButton" name="mesa_3PB">
         <property name="geometry">
          <rect>
-          <x>590</x>
-          <y>150</y>
+          <x>990</x>
+          <y>70</y>
           <width>81</width>
           <height>81</height>
          </rect>
@@ -72,7 +139,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QLabel" name="mesa_2LB">
         <property name="geometry">
          <rect>
-          <x>290</x>
+          <x>680</x>
           <y>100</y>
           <width>121</width>
           <height>111</height>
@@ -91,8 +158,8 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QPushButton" name="mesa_7PB">
         <property name="geometry">
          <rect>
-          <x>380</x>
-          <y>430</y>
+          <x>300</x>
+          <y>240</y>
           <width>81</width>
           <height>81</height>
          </rect>
@@ -110,8 +177,8 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QLabel" name="mesa_4LB">
         <property name="geometry">
          <rect>
-          <x>110</x>
-          <y>340</y>
+          <x>60</x>
+          <y>440</y>
           <width>121</width>
           <height>111</height>
          </rect>
@@ -129,8 +196,8 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QLabel" name="mesa_5LB">
         <property name="geometry">
          <rect>
-          <x>330</x>
-          <y>250</y>
+          <x>730</x>
+          <y>400</y>
           <width>121</width>
           <height>111</height>
          </rect>
@@ -148,8 +215,8 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QPushButton" name="mesa_4PB">
         <property name="geometry">
          <rect>
-          <x>130</x>
-          <y>350</y>
+          <x>80</x>
+          <y>450</y>
           <width>81</width>
           <height>81</height>
          </rect>
@@ -167,8 +234,8 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QPushButton" name="mesa_5PB">
         <property name="geometry">
          <rect>
-          <x>350</x>
-          <y>260</y>
+          <x>750</x>
+          <y>410</y>
           <width>81</width>
           <height>81</height>
          </rect>
@@ -186,8 +253,8 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QLabel" name="mesa_7LB">
         <property name="geometry">
          <rect>
-          <x>360</x>
-          <y>420</y>
+          <x>280</x>
+          <y>230</y>
           <width>121</width>
           <height>111</height>
          </rect>
@@ -206,7 +273,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
         <property name="geometry">
          <rect>
           <x>100</x>
-          <y>160</y>
+          <y>80</y>
           <width>121</width>
           <height>111</height>
          </rect>
@@ -224,7 +291,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QPushButton" name="mesa_6PB">
         <property name="geometry">
          <rect>
-          <x>560</x>
+          <x>990</x>
           <y>310</y>
           <width>81</width>
           <height>81</height>
@@ -243,7 +310,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QPushButton" name="mesa_2PB">
         <property name="geometry">
          <rect>
-          <x>310</x>
+          <x>700</x>
           <y>110</y>
           <width>81</width>
           <height>81</height>
@@ -263,7 +330,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
         <property name="geometry">
          <rect>
           <x>120</x>
-          <y>170</y>
+          <y>90</y>
           <width>81</width>
           <height>81</height>
          </rect>
@@ -281,8 +348,8 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QLabel" name="mesa_3LB">
         <property name="geometry">
          <rect>
-          <x>570</x>
-          <y>140</y>
+          <x>970</x>
+          <y>60</y>
           <width>121</width>
           <height>111</height>
          </rect>
@@ -300,14 +367,16 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QLabel" name="nombreLB">
         <property name="geometry">
          <rect>
-          <x>40</x>
-          <y>10</y>
-          <width>671</width>
+          <x>490</x>
+          <y>320</y>
+          <width>221</width>
           <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 24pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
+         <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+font: 24pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
         </property>
         <property name="text">
          <string>BEER-PARA-CREER</string>
@@ -319,16 +388,370 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QPushButton" name="historialFacturasPB">
         <property name="geometry">
          <rect>
-          <x>659</x>
-          <y>550</y>
+          <x>400</x>
+          <y>60</y>
           <width>111</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #000000;
+	color: #ffffff;
+	font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+	border: 0px solid;
+	border-radius: 2px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #5d5d5d;  
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #5d5d5d;
+
+}
+
+
+QPushButton::checked
+{
+	background-color: #5d5d5d;
+
+}
+
+QPushButton:disabled {
+	background-color:#5d5d5d;
+}</string>
         </property>
         <property name="text">
          <string>Historial de Facturas</string>
         </property>
        </widget>
+       <widget class="QLabel" name="semaforoM2">
+        <property name="geometry">
+         <rect>
+          <x>660</x>
+          <y>80</y>
+          <width>31</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Archivos.qrc">:/Imagenes/apagada.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="semaforoM3">
+        <property name="geometry">
+         <rect>
+          <x>950</x>
+          <y>40</y>
+          <width>31</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Archivos.qrc">:/Imagenes/apagada.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="semaforoM4">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>420</y>
+          <width>31</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Archivos.qrc">:/Imagenes/apagada.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="semaforoM5">
+        <property name="geometry">
+         <rect>
+          <x>710</x>
+          <y>380</y>
+          <width>31</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Archivos.qrc">:/Imagenes/apagada.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="semaforoM6">
+        <property name="geometry">
+         <rect>
+          <x>950</x>
+          <y>280</y>
+          <width>31</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Archivos.qrc">:/Imagenes/apagada.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="semaforoM7">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>210</y>
+          <width>31</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Archivos.qrc">:/Imagenes/apagada.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="semaforoM1">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>60</y>
+          <width>31</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Archivos.qrc">:/Imagenes/apagada.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>-10</y>
+          <width>171</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Archivos.qrc">:/Imagenes/caja.PNG</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>410</y>
+          <width>71</width>
+          <height>191</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Archivos.qrc">:/Imagenes/recepcion.PNG</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>510</y>
+          <width>241</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Archivos.qrc">:/Imagenes/entrada.PNG</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>1090</x>
+          <y>490</y>
+          <width>81</width>
+          <height>95</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="2" column="0">
+          <widget class="QLabel" name="simbolo3">
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="Archivos.qrc">:/Imagenes/apagada.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="simbolo2">
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="Archivos.qrc">:/Imagenes/exclamacion.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLabel" name="label_5">
+           <property name="styleSheet">
+            <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Pendiente</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="label_6">
+           <property name="styleSheet">
+            <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Inactiva</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="simbolo1">
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="Archivos.qrc">:/Imagenes/activa.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_4">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Activa</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <zorder>label_3</zorder>
+       <zorder>label</zorder>
        <zorder>mesa_7LB</zorder>
        <zorder>mesa_3LB</zorder>
        <zorder>mesa_6LB</zorder>
@@ -345,12 +768,25 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <zorder>mesa_1PB</zorder>
        <zorder>nombreLB</zorder>
        <zorder>historialFacturasPB</zorder>
+       <zorder>semaforoM2</zorder>
+       <zorder>semaforoM3</zorder>
+       <zorder>semaforoM4</zorder>
+       <zorder>semaforoM5</zorder>
+       <zorder>semaforoM6</zorder>
+       <zorder>semaforoM7</zorder>
+       <zorder>semaforoM1</zorder>
+       <zorder>label_2</zorder>
+       <zorder>simbolo2</zorder>
+       <zorder>simbolo3</zorder>
+       <zorder>label_4</zorder>
+       <zorder>label_5</zorder>
+       <zorder>label_6</zorder>
       </widget>
       <widget class="QWidget" name="Menu">
        <widget class="QPushButton" name="volverPB">
         <property name="geometry">
          <rect>
-          <x>700</x>
+          <x>1090</x>
           <y>550</y>
           <width>71</width>
           <height>21</height>
@@ -362,6 +798,42 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
           <height>16777215</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #000000;
+	color: #ffffff;
+	font: 8pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+	border: 0px solid;
+	border-radius: 2px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #5d5d5d;  
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #5d5d5d;
+
+}
+
+
+QPushButton::checked
+{
+	background-color: #5d5d5d;
+
+}
+
+QPushButton:disabled {
+	background-color:#5d5d5d;
+}</string>
+        </property>
         <property name="text">
          <string>Volver</string>
         </property>
@@ -371,7 +843,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
          <rect>
           <x>10</x>
           <y>110</y>
-          <width>761</width>
+          <width>1151</width>
           <height>431</height>
          </rect>
         </property>
@@ -380,9 +852,73 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
           <widget class="QScrollArea" name="pedidoSA">
            <property name="maximumSize">
             <size>
-             <width>250</width>
+             <width>320</width>
              <height>16777215</height>
             </size>
+           </property>
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
            </property>
            <property name="widgetResizable">
             <bool>true</bool>
@@ -392,7 +928,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>248</width>
+              <width>318</width>
               <height>427</height>
              </rect>
             </property>
@@ -406,19 +942,83 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
          </item>
          <item row="0" column="1">
           <widget class="QScrollArea" name="menuSA">
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>38</red>
+                 <green>39</green>
+                 <blue>40</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>38</red>
+                 <green>39</green>
+                 <blue>40</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
            <property name="widgetResizable">
             <bool>true</bool>
            </property>
-           <widget class="QWidget" name="scrollAreaWidgetContents_2">
+           <widget class="QWidget" name="widget">
             <property name="geometry">
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>501</width>
+              <width>821</width>
               <height>427</height>
              </rect>
             </property>
-            <layout class="QGridLayout" name="gridLayout_5">
+            <layout class="QGridLayout" name="gridLayout_9">
              <item row="0" column="0">
               <layout class="QGridLayout" name="menuGL"/>
              </item>
@@ -433,13 +1033,161 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>761</width>
+          <width>1151</width>
           <height>31</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
          <item row="0" column="1">
           <widget class="QComboBox" name="meserosCB">
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>120</red>
+                 <green>120</green>
+                 <blue>120</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>120</red>
+                 <green>120</green>
+                 <blue>120</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
+           </property>
            <item>
             <property name="text">
              <string>Mesero</string>
@@ -489,7 +1237,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
          <rect>
           <x>10</x>
           <y>60</y>
-          <width>761</width>
+          <width>1151</width>
           <height>41</height>
          </rect>
         </property>
@@ -501,7 +1249,7 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
 </string>
            </property>
            <property name="text">
-            <string>                 PEDIDO</string>
+            <string>                          PEDIDO</string>
            </property>
           </widget>
          </item>
@@ -521,14 +1269,99 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QPushButton" name="facturaPB">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>140</x>
           <y>550</y>
           <width>80</width>
           <height>21</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #000000;
+	color: #ffffff;
+	font: 8pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+	border: 0px solid;
+	border-radius: 2px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #5d5d5d;  
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #5d5d5d;
+
+}
+
+
+QPushButton::checked
+{
+	background-color: #5d5d5d;
+
+}
+
+QPushButton:disabled {
+	background-color:#5d5d5d;
+}</string>
+        </property>
         <property name="text">
          <string>Factura</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="apagarPB">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>550</y>
+          <width>80</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #000000;
+	color: #ffffff;
+	font: 8pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+	border: 0px solid;
+	border-radius: 2px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #5d5d5d;  
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #5d5d5d;
+
+}
+
+
+QPushButton::checked
+{
+	background-color: #5d5d5d;
+
+}
+
+QPushButton:disabled {
+	background-color:#5d5d5d;
+}</string>
+        </property>
+        <property name="text">
+         <string>Apagar Mesa</string>
         </property>
        </widget>
       </widget>
@@ -536,13 +1369,111 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
-          <x>170</x>
+          <x>320</x>
           <y>150</y>
-          <width>471</width>
+          <width>537</width>
           <height>241</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_8">
+         <item row="1" column="0">
+          <widget class="QPushButton" name="activarMesaPB">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton
+{
+	background-color: #000000;
+	color: #ffffff;
+	font: 8pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+	border: 0px solid;
+	border-radius: 2px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #5d5d5d;  
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #5d5d5d;
+
+}
+
+
+QPushButton::checked
+{
+	background-color: #5d5d5d;
+
+}
+
+QPushButton:disabled {
+	background-color:#5d5d5d;
+}</string>
+           </property>
+           <property name="text">
+            <string>Activar</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="regresarPB">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton
+{
+	background-color: #000000;
+	color: #ffffff;
+	font: 8pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+	border: 0px solid;
+	border-radius: 2px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #5d5d5d;  
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #5d5d5d;
+
+}
+
+
+QPushButton::checked
+{
+	background-color: #5d5d5d;
+
+}
+
+QPushButton:disabled {
+	background-color:#5d5d5d;
+}</string>
+           </property>
+           <property name="text">
+            <string>Regresar</string>
+           </property>
+          </widget>
+         </item>
          <item row="0" column="0" colspan="2">
           <widget class="QLabel" name="mensajeMesaApagadaLB">
            <property name="styleSheet">
@@ -556,20 +1487,6 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="0">
-          <widget class="QPushButton" name="activarMesaPB">
-           <property name="text">
-            <string>Activar</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QPushButton" name="regresarPB">
-           <property name="text">
-            <string>Regresar</string>
-           </property>
-          </widget>
-         </item>
         </layout>
        </widget>
       </widget>
@@ -577,11 +1494,47 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QPushButton" name="okPB">
         <property name="geometry">
          <rect>
-          <x>350</x>
-          <y>550</y>
+          <x>580</x>
+          <y>540</y>
           <width>80</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #000000;
+	color: #ffffff;
+	font: 8pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+	border: 0px solid;
+	border-radius: 2px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #5d5d5d;  
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #5d5d5d;
+
+}
+
+
+QPushButton::checked
+{
+	background-color: #5d5d5d;
+
+}
+
+QPushButton:disabled {
+	background-color:#5d5d5d;
+}</string>
         </property>
         <property name="text">
          <string>Ok</string>
@@ -590,21 +1543,27 @@ font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
        <widget class="QScrollArea" name="facturasSA">
         <property name="geometry">
          <rect>
-          <x>40</x>
-          <y>30</y>
-          <width>701</width>
+          <x>350</x>
+          <y>20</y>
+          <width>511</width>
           <height>501</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="widgetResizable">
          <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
         <widget class="QWidget" name="scrollAreaWidgetContents_4">
          <property name="geometry">
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>699</width>
+           <width>509</width>
            <height>499</height>
           </rect>
          </property>
