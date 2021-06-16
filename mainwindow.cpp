@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     baseDatos = QSqlDatabase::addDatabase("QSQLITE");
 
     //le damos la ubicacion del archivo al programa
-    baseDatos.setDatabaseName("D:/Escritorio/Project Foodministration/Foodministration/beer_para_creer.db");
+    baseDatos.setDatabaseName("beer_para_creer.db");
 
     //validamos que la base se pueda abrir
     if(!baseDatos.open()){

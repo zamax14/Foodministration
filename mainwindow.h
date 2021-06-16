@@ -9,7 +9,6 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 #include <iostream>
-#include <QDir>
 #include <QPainter>
 #include <QDateTime>
 
