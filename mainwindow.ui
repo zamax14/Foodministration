@@ -95,7 +95,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="Mesas">
        <widget class="QLabel" name="mesa_6LB">
@@ -624,7 +624,7 @@ QPushButton:disabled {
          <bool>true</bool>
         </property>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>1090</x>
@@ -750,6 +750,47 @@ color: rgb(255, 255, 255);</string>
          </item>
         </layout>
        </widget>
+       <widget class="QPushButton" name="helpPB">
+        <property name="geometry">
+         <rect>
+          <x>1130</x>
+          <y>0</y>
+          <width>71</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(187, 154, 123,0);
+
+border-radius: 35px;
+color: rgb(0, 0, 0);
+font: 16pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="helpLB">
+        <property name="geometry">
+         <rect>
+          <x>1140</x>
+          <y>10</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="Archivos.qrc">:/Imagenes/help.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <zorder>helpLB</zorder>
+       <zorder>layoutWidget</zorder>
        <zorder>label_3</zorder>
        <zorder>label</zorder>
        <zorder>mesa_7LB</zorder>
@@ -776,11 +817,7 @@ color: rgb(255, 255, 255);</string>
        <zorder>semaforoM7</zorder>
        <zorder>semaforoM1</zorder>
        <zorder>label_2</zorder>
-       <zorder>simbolo2</zorder>
-       <zorder>simbolo3</zorder>
-       <zorder>label_4</zorder>
-       <zorder>label_5</zorder>
-       <zorder>label_6</zorder>
+       <zorder>helpPB</zorder>
       </widget>
       <widget class="QWidget" name="Menu">
        <widget class="QPushButton" name="volverPB">
@@ -1573,6 +1610,870 @@ QPushButton:disabled {
           </item>
          </layout>
         </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Ayuda">
+       <widget class="QStackedWidget" name="ayudaSW">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>30</y>
+          <width>861</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="PlaceholderText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="128">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="PlaceholderText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="128">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>120</red>
+              <green>120</green>
+              <blue>120</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>120</red>
+              <green>120</green>
+              <blue>120</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="PlaceholderText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="128">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="page_1">
+         <widget class="QLabel" name="label_7">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>40</y>
+            <width>581</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Para seleccionar una mesa, simplemente hay que dar click sobre ella y se abrirá el menú:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_8">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>170</y>
+            <width>171</width>
+            <height>161</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 1.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_9">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>170</y>
+            <width>421</width>
+            <height>151</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 1.1.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_2">
+         <widget class="QLabel" name="label_10">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>40</y>
+            <width>601</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Para agregar productos, tenemos que indicar una cantidad que no sea 0, ya que no se habilitará el botón de agregar:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_11">
+          <property name="geometry">
+           <rect>
+            <x>520</x>
+            <y>140</y>
+            <width>161</width>
+            <height>201</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 2.1.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_12">
+          <property name="geometry">
+           <rect>
+            <x>190</x>
+            <y>140</y>
+            <width>161</width>
+            <height>201</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 2.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_3">
+         <widget class="QLabel" name="label_13">
+          <property name="geometry">
+           <rect>
+            <x>190</x>
+            <y>40</y>
+            <width>531</width>
+            <height>81</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Automáticamente en la sección del pedido se mostrarán los platillos que se han escogido:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_14">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>110</y>
+            <width>211</width>
+            <height>301</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 3.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_4">
+         <widget class="QLabel" name="label_15">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>70</y>
+            <width>591</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Al dar click en factura sin haber entregado ningún pedido nos saldrá el siguiente cuadro de texto: </string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_16">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>210</y>
+            <width>231</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 4.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_5">
+         <widget class="QLabel" name="label_17">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>70</y>
+            <width>611</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Si damos click en factura cuando no tenemos todos los pedidos entregados aparece esto:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_18">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>150</y>
+            <width>171</width>
+            <height>241</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 5.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_19">
+          <property name="geometry">
+           <rect>
+            <x>480</x>
+            <y>190</y>
+            <width>201</width>
+            <height>111</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 5.1.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_6">
+         <widget class="QLabel" name="label_20">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>60</y>
+            <width>661</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Y si ya está entregado todo, pero aún no se ha escogido el mesero saldrá el siguiente aviso:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_21">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>120</y>
+            <width>451</width>
+            <height>271</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 6.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_22">
+          <property name="geometry">
+           <rect>
+            <x>590</x>
+            <y>210</y>
+            <width>161</width>
+            <height>91</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 6.1.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_7">
+         <widget class="QLabel" name="label_23">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>50</y>
+            <width>571</width>
+            <height>81</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Para seleccionar mesero solo hay que escoger uno en la parte superior derecha de la interfaz:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_24">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>170</y>
+            <width>621</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 7.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_8">
+         <widget class="QLabel" name="label_25">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>30</y>
+            <width>471</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Ahora al presionar el botón de factura sí saldrá ésta, de la siguiente manera:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_26">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>90</y>
+            <width>351</width>
+            <height>341</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 8.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_9">
+         <widget class="QLabel" name="label_27">
+          <property name="geometry">
+           <rect>
+            <x>250</x>
+            <y>30</y>
+            <width>531</width>
+            <height>81</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Para eliminar un platillo del pedido, no tiene que estar entregado:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_28">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>190</y>
+            <width>241</width>
+            <height>111</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 9.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_10">
+         <widget class="QLabel" name="label_29">
+          <property name="geometry">
+           <rect>
+            <x>230</x>
+            <y>60</y>
+            <width>431</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Si activamos una mesa y no hay ningún platillo en el pedido se verá así:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_30">
+          <property name="geometry">
+           <rect>
+            <x>310</x>
+            <y>190</y>
+            <width>181</width>
+            <height>151</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 10.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_11">
+         <widget class="QLabel" name="label_31">
+          <property name="geometry">
+           <rect>
+            <x>230</x>
+            <y>60</y>
+            <width>631</width>
+            <height>81</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Si efectivamente hay platillos no entregados se verá de la siguiente manera:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_32">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>200</y>
+            <width>141</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 11.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_12">
+         <widget class="QLabel" name="label_33">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>40</y>
+            <width>601</width>
+            <height>81</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Por último, para mirar el historial de facturas debemos presionar en su respectivo cuadro:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_34">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>200</y>
+            <width>191</width>
+            <height>181</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 12.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_35">
+          <property name="geometry">
+           <rect>
+            <x>450</x>
+            <y>110</y>
+            <width>301</width>
+            <height>311</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Archivos.qrc">:/Imagenes/ayuda 12.1.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="anteriorPB">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>500</y>
+          <width>151</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #000000;
+	color: #ffffff;
+	font: 8pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+	border: 0px solid;
+	border-radius: 2px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #5d5d5d;  
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #5d5d5d;
+
+}
+
+
+QPushButton::checked
+{
+	background-color: #5d5d5d;
+
+}
+
+QPushButton:disabled {
+	background-color:#5d5d5d;
+}</string>
+        </property>
+        <property name="text">
+         <string>Anterior</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="siguientePB">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>500</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #000000;
+	color: #ffffff;
+	font: 8pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+	border: 0px solid;
+	border-radius: 2px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #5d5d5d;  
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #5d5d5d;
+
+}
+
+
+QPushButton::checked
+{
+	background-color: #5d5d5d;
+
+}
+
+QPushButton:disabled {
+	background-color:#5d5d5d;
+}</string>
+        </property>
+        <property name="text">
+         <string>Siguiente</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="regresarAPB">
+        <property name="geometry">
+         <rect>
+          <x>1090</x>
+          <y>10</y>
+          <width>80</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #000000;
+	color: #ffffff;
+	font: 8pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+	border: 0px solid;
+	border-radius: 2px;
+
+}
+
+
+QPushButton::hover
+{
+	background-color: #5d5d5d;  
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #5d5d5d;
+
+}
+
+
+QPushButton::checked
+{
+	background-color: #5d5d5d;
+
+}
+
+QPushButton:disabled {
+	background-color:#5d5d5d;
+}</string>
+        </property>
+        <property name="text">
+         <string>Regresar</string>
+        </property>
        </widget>
       </widget>
      </widget>

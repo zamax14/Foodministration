@@ -87,6 +87,14 @@ private slots:
 
     void on_pagesSW_currentChanged(int arg1);
 
+    void on_anteriorPB_clicked();
+
+    void on_siguientePB_clicked();
+
+    void on_regresarAPB_clicked();
+
+    void on_helpPB_clicked();
+
 private:
     Ui::MainWindow *ui;
     QList<Producto> menuProductos;
@@ -95,5 +103,6 @@ private:
     QSqlDatabase baseDatos;
     int mesaActual = 0;
     int id_Ticket_Producto = 1;
+    int ayudaCont = 0;
 };
 #endif // MAINWINDOW_H

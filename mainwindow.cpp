@@ -526,3 +526,39 @@ void MainWindow::on_pagesSW_currentChanged(int arg1)
         //llamamos a la funcion que actualiza el estado grafico de la mesa
         actualizarSemaforos(mesaActual);
 }
+
+void MainWindow::on_anteriorPB_clicked()
+{
+    if(ayudaCont == 1)
+        ui->anteriorPB->setEnabled(false);
+
+    ui->siguientePB->setEnabled(true);
+    --ayudaCont;
+    ui->ayudaSW->setCurrentIndex(ayudaCont);
+
+}
+
+void MainWindow::on_siguientePB_clicked()
+{
+    if (ayudaCont == 10)
+        ui->siguientePB->setEnabled(false);
+
+    ui->anteriorPB->setEnabled(true);
+    ++ayudaCont;
+    ui->ayudaSW->setCurrentIndex(ayudaCont);
+
+}
+
+void MainWindow::on_regresarAPB_clicked()
+{
+    ui->pagesSW->setCurrentIndex(0);
+    ayudaCont = 0;
+}
+
+void MainWindow::on_helpPB_clicked()
+{
+    ui->pagesSW->setCurrentIndex(4);
+    ui->ayudaSW->setCurrentIndex(0);
+    ui->anteriorPB->setEnabled(false);
+
+}
