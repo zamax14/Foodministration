@@ -213,7 +213,7 @@ color: rgb(0, 0, 0);</string>
      <x>150</x>
      <y>130</y>
      <width>161</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -221,7 +221,8 @@ color: rgb(0, 0, 0);</string>
 color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
-    <string>COL. VILLASEÑOR C.P. 44600 RFC FGU830930PD3</string>
+    <string>COL. VILLASEÑOR C.P. 44600 RFC FGU830930PD3
+Tel: 3314335351</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -231,7 +232,7 @@ color: rgb(0, 0, 0);</string>
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>150</y>
+     <y>160</y>
      <width>161</width>
      <height>41</height>
     </rect>
